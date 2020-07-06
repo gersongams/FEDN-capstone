@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Travel Planner</title>
+</head>
+<body>
+<div class="app">
+    <div class="container">
+        <h1>Travel Planner</h1>
+        <div class="header">
+            <h2>My Trips</h2>
+            <button id="newTripBtn" class="btn btn--purple"><span>+</span> new trip</button>
+        </div>
+        <div id="newTripContainer" class="trip-wrapper">
+            <div class="trip-form">
+                <form class="form" id="form" onsubmit="Client.formHandler(event);">
+                    <div class="form__group">
+                        <label class="form__label" for="location">My trip to</label>
+                        <input class="form__input" required name="location" list="countries" id="location"
+                               placeholder="Enter Location">
+                        <datalist id="countries">
+                        </datalist>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="departing">Departing</label>
+                        <input class="form__input" required name="departing" type="date" id="departing"
+                               placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="form__group form__actions">
+                        <button type="submit" class="btn btn--purple">ADD TRIP</button>
+                        <button id="closeNewTrip" class="btn btn--red">CANCEL</button>
+                    </div>
+                </form>
+            </div>
+            <div id="newTrip" class="trip-card trip-card--new">
+                <div class="trip-card__image">
+                    <img id="tripPhoto" src="" alt="location-picture">
+                </div>
+                <div class="trip-card__information">
+                    <h3>My trip to: <span id="place"></span></h3>
+                    <h4>Departing: <span id="departingDate"></span></h4>
+                    <div class="trip-card__actions">
+                        <button id="saveTrip" class="btn btn--purple">save trip</button>
+                        <button id="removeTrip" class="btn btn--red">remove trip</button>
+                    </div>
+                    <div id="remainingDays" class="trip-card__wait"></div>
+                    <div>
+                        <div class="trip-card__weather-title">Typical weather for the is</div>
+                        <div id="weatherMinMax"></div>
+                        <div id="weatherDescription"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="savedTrips">
+        </div>
+    </div>
+</div>
+<script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
+</body>
+</html>

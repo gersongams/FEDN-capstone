@@ -1,0 +1,19 @@
+.app {
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  padding: 4rem 6rem;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+}
