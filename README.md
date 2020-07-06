@@ -59,7 +59,7 @@ yarn start
 
 ## Demo
 
-There is a demo for this application running in [https://news-evaluator-nlp.herokuapp.com/](https://news-evaluator-nlp.herokuapp.com/)
+There is a demo for this application running in [https://fedn-capstone.herokuapp.com/](https://fedn-capstone.herokuapp.com/)
 
 ## Desktop version
 
