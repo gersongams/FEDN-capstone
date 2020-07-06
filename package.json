@@ -15,6 +15,7 @@
     "server-dev": "nodemon src/server/server.js",
     "server-prod": "node src/server/server.js",
     "client-prod": "webpack --config webpack.prod.js",
+    "heroku-prebuild": "yarn install --production=false",
     "client-dev": "webpack-dev-server --host 0.0.0.0 --port 7000 --config webpack.dev.js --open"
   },
   "keywords": [],
